@@ -19,6 +19,7 @@
 		AACF70992BCDE047007E91BD /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACF70982BCDE047007E91BD /* Presentable.swift */; };
 		AACF709B2BCDE04C007E91BD /* Pushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACF709A2BCDE04C007E91BD /* Pushable.swift */; };
 		AACF709D2BCDE052007E91BD /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACF709C2BCDE052007E91BD /* Alertable.swift */; };
+		AACF709F2BCDE2BF007E91BD /* Dismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACF709E2BCDE2BF007E91BD /* Dismissable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		AACF70982BCDE047007E91BD /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
 		AACF709A2BCDE04C007E91BD /* Pushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pushable.swift; sourceTree = "<group>"; };
 		AACF709C2BCDE052007E91BD /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		AACF709E2BCDE2BF007E91BD /* Dismissable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dismissable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				AACF70982BCDE047007E91BD /* Presentable.swift */,
 				AACF709A2BCDE04C007E91BD /* Pushable.swift */,
 				AACF709C2BCDE052007E91BD /* Alertable.swift */,
+				AACF709E2BCDE2BF007E91BD /* Dismissable.swift */,
 			);
 			path = SharedProtocols;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				AACF708A2BCDD6C1007E91BD /* FavoritesListViewController.swift in Sources */,
 				AACF70722BCDD26B007E91BD /* PodcastListViewController.swift in Sources */,
 				AACF706E2BCDD26B007E91BD /* AppDelegate.swift in Sources */,
+				AACF709F2BCDE2BF007E91BD /* Dismissable.swift in Sources */,
 				AACF709B2BCDE04C007E91BD /* Pushable.swift in Sources */,
 				AACF70842BCDD2F2007E91BD /* AppContainer.swift in Sources */,
 			);

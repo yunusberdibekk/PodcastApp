@@ -8,6 +8,8 @@
 import UIKit
 
 protocol Alertable {
+    // MARK: - ADD Different alert styles
+
     func alert(title: String, message: String, prefferedStyle: UIAlertController.Style)
 }
 
