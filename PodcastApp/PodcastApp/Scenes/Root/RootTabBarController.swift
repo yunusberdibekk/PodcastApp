@@ -32,21 +32,6 @@ final class RootTabBarController: UITabBarController {
         let controller2 = UINavigationController(rootViewController: SearchViewController())
         let controller3 = UINavigationController(rootViewController: FavoritesListViewController())
 
-        controller1.tabBarItem = UITabBarItem(
-            title: "Feed",
-            image: UIImage(systemName: "list.clipboard"),
-            selectedImage: UIImage(systemName: "list.clipboard.fill"))
-
-        controller2.tabBarItem = UITabBarItem(
-            title: "Search",
-            image: UIImage(systemName: "magnifyingglass"),
-            selectedImage: UIImage(systemName: "magnifyingglass.circle.fill"))
-
-        controller3.tabBarItem = UITabBarItem(
-            title: "Favorites",
-            image: UIImage(systemName: "heart"),
-            selectedImage: UIImage(systemName: "heart.fill"))
-
         return [
             createController(controller: PodcastListViewController(),
                              title: "Podcasts",
