@@ -16,6 +16,9 @@
 		AACF70882BCDD656007E91BD /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACF70872BCDD656007E91BD /* RootTabBarController.swift */; };
 		AACF708A2BCDD6C1007E91BD /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACF70892BCDD6C1007E91BD /* FavoritesListViewController.swift */; };
 		AACF708C2BCDD82E007E91BD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACF708B2BCDD82E007E91BD /* SearchViewController.swift */; };
+		AACF70992BCDE047007E91BD /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACF70982BCDE047007E91BD /* Presentable.swift */; };
+		AACF709B2BCDE04C007E91BD /* Pushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACF709A2BCDE04C007E91BD /* Pushable.swift */; };
+		AACF709D2BCDE052007E91BD /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACF709C2BCDE052007E91BD /* Alertable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		AACF70872BCDD656007E91BD /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		AACF70892BCDD6C1007E91BD /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
 		AACF708B2BCDD82E007E91BD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		AACF70982BCDE047007E91BD /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		AACF709A2BCDE04C007E91BD /* Pushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pushable.swift; sourceTree = "<group>"; };
+		AACF709C2BCDE052007E91BD /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 		AACF706C2BCDD26B007E91BD /* PodcastApp */ = {
 			isa = PBXGroup;
 			children = (
+				AACF70942BCDE017007E91BD /* Utilities */,
 				AACF708D2BCDDF29007E91BD /* App */,
 				AACF708E2BCDDF33007E91BD /* Scenes */,
 				AACF70932BCDDF78007E91BD /* Resources */,
@@ -130,6 +137,32 @@
 				AACF70762BCDD26D007E91BD /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		AACF70942BCDE017007E91BD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AACF70972BCDE03C007E91BD /* SharedProtocols */,
+				AACF70962BCDE025007E91BD /* Extension */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AACF70962BCDE025007E91BD /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AACF70972BCDE03C007E91BD /* SharedProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				AACF70982BCDE047007E91BD /* Presentable.swift */,
+				AACF709A2BCDE04C007E91BD /* Pushable.swift */,
+				AACF709C2BCDE052007E91BD /* Alertable.swift */,
+			);
+			path = SharedProtocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,11 +236,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AACF70862BCDD2F6007E91BD /* AppRouter.swift in Sources */,
+				AACF70992BCDE047007E91BD /* Presentable.swift in Sources */,
 				AACF708C2BCDD82E007E91BD /* SearchViewController.swift in Sources */,
 				AACF70882BCDD656007E91BD /* RootTabBarController.swift in Sources */,
+				AACF709D2BCDE052007E91BD /* Alertable.swift in Sources */,
 				AACF708A2BCDD6C1007E91BD /* FavoritesListViewController.swift in Sources */,
 				AACF70722BCDD26B007E91BD /* PodcastListViewController.swift in Sources */,
 				AACF706E2BCDD26B007E91BD /* AppDelegate.swift in Sources */,
+				AACF709B2BCDE04C007E91BD /* Pushable.swift in Sources */,
 				AACF70842BCDD2F2007E91BD /* AppContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
