@@ -10,11 +10,16 @@ import UIKit
 final class RootTabBarController: UITabBarController {
     init() {
         super.init(nibName: nil, bundle: nil)
-        let appearance = UINavigationBarAppearance()
-
-        appearance.configureWithOpaqueBackground()
-        UINavigationBar.appearance().standardAppearance = appearance
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        
+        let navAppearance = UINavigationBarAppearance()
+        navAppearance.configureWithOpaqueBackground()
+        UINavigationBar.appearance().standardAppearance = navAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navAppearance
+        
+        let tabAppearance = UITabBarAppearance()
+        tabAppearance.configureWithOpaqueBackground()
+        UITabBar.appearance().standardAppearance = tabAppearance
+        UITabBar.appearance().scrollEdgeAppearance = tabAppearance
     }
 
     @available(*, unavailable)
@@ -28,34 +33,27 @@ final class RootTabBarController: UITabBarController {
     }
 
     private func prepareControllers() -> [UIViewController] {
-        let controller1 = UINavigationController(rootViewController: PodcastListViewController())
-        let controller2 = UINavigationController(rootViewController: SearchViewController())
-        let controller3 = UINavigationController(rootViewController: FavoritesListViewController())
-
         return [
             createController(controller: PodcastListViewController(),
                              title: "Podcasts",
-                             systemName: "list.clipboard",
-                             selectedSystemName: "list.clipboard.fill"),
+                             image: .music_note_house),
 
             createController(controller: SearchViewController(),
                              title: "Search",
-                             systemName: "magnifyingglass",
-                             selectedSystemName: "magnifyingglass.circle.fill"),
+                             image: .magnifyingglass_circle),
 
             createController(controller: FavoritesListViewController(),
                              title: "Favorites",
-                             systemName: "heart",
-                             selectedSystemName: "heart.fill")
+                             image: .heart)
         ]
     }
 
-    private func createController(controller: UIViewController, title: String, systemName: String, selectedSystemName: String) -> UINavigationController {
+    private func createController(controller: UIViewController, title: String, image: SFSymbol) -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: controller)
 
         navigationController.tabBarItem = UITabBarItem(title: title,
-                                                       image: UIImage(systemName: systemName),
-                                                       selectedImage: UIImage(systemName: selectedSystemName))
+                                                       image: UIImage(systemName: image.systemName),
+                                                       selectedImage: UIImage(systemName: image.fill))
 
         navigationController.navigationItem.largeTitleDisplayMode = .inline
         navigationController.navigationBar.prefersLargeTitles = true

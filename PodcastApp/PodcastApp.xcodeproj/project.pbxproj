@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA54A29D2BCF2FE900FC3F6A /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA54A29C2BCF2FE900FC3F6A /* SFSymbol.swift */; };
+		AA54A2A12BCF33C700FC3F6A /* PodcastAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA54A2A02BCF33C700FC3F6A /* PodcastAPI.swift */; };
+		AA54A2A32BCF33D900FC3F6A /* PodcastAPIContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA54A2A22BCF33D900FC3F6A /* PodcastAPIContracts.swift */; };
 		AACF706E2BCDD26B007E91BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACF706D2BCDD26B007E91BD /* AppDelegate.swift */; };
 		AACF70722BCDD26B007E91BD /* PodcastListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACF70712BCDD26B007E91BD /* PodcastListViewController.swift */; };
 		AACF70772BCDD26D007E91BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AACF70762BCDD26D007E91BD /* Assets.xcassets */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA54A29C2BCF2FE900FC3F6A /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
+		AA54A2A02BCF33C700FC3F6A /* PodcastAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastAPI.swift; sourceTree = "<group>"; };
+		AA54A2A22BCF33D900FC3F6A /* PodcastAPIContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastAPIContracts.swift; sourceTree = "<group>"; };
 		AACF706A2BCDD26B007E91BD /* PodcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACF706D2BCDD26B007E91BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AACF70712BCDD26B007E91BD /* PodcastListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +57,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA54A29B2BCF2FDC00FC3F6A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AA54A29C2BCF2FE900FC3F6A /* SFSymbol.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		AA54A29E2BCF33B800FC3F6A /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AA54A2A42BCF3AE100FC3F6A /* Managers */,
+				AA54A29F2BCF33BD00FC3F6A /* APIClient */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AA54A29F2BCF33BD00FC3F6A /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				AA54A2A62BCF3B0700FC3F6A /* DTO's */,
+				AA54A2A72BCF3B4A00FC3F6A /* Responses */,
+				AA54A2A52BCF3B0200FC3F6A /* PodcastAPI */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		AA54A2A42BCF3AE100FC3F6A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		AA54A2A52BCF3B0200FC3F6A /* PodcastAPI */ = {
+			isa = PBXGroup;
+			children = (
+				AA54A2A02BCF33C700FC3F6A /* PodcastAPI.swift */,
+				AA54A2A22BCF33D900FC3F6A /* PodcastAPIContracts.swift */,
+			);
+			path = PodcastAPI;
+			sourceTree = "<group>";
+		};
+		AA54A2A62BCF3B0700FC3F6A /* DTO's */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "DTO's";
+			sourceTree = "<group>";
+		};
+		AA54A2A72BCF3B4A00FC3F6A /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
 		AACF70612BCDD26B007E91BD = {
 			isa = PBXGroup;
 			children = (
@@ -70,8 +133,9 @@
 		AACF706C2BCDD26B007E91BD /* PodcastApp */ = {
 			isa = PBXGroup;
 			children = (
-				AACF70942BCDE017007E91BD /* Utilities */,
 				AACF708D2BCDDF29007E91BD /* App */,
+				AA54A29E2BCF33B800FC3F6A /* Core */,
+				AACF70942BCDE017007E91BD /* Utilities */,
 				AACF708E2BCDDF33007E91BD /* Scenes */,
 				AACF70932BCDDF78007E91BD /* Resources */,
 			);
@@ -144,17 +208,10 @@
 		AACF70942BCDE017007E91BD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				AA54A29B2BCF2FDC00FC3F6A /* Constants */,
 				AACF70972BCDE03C007E91BD /* SharedProtocols */,
-				AACF70962BCDE025007E91BD /* Extension */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		AACF70962BCDE025007E91BD /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		AACF70972BCDE03C007E91BD /* SharedProtocols */ = {
@@ -238,7 +295,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA54A2A32BCF33D900FC3F6A /* PodcastAPIContracts.swift in Sources */,
 				AACF70862BCDD2F6007E91BD /* AppRouter.swift in Sources */,
+				AA54A2A12BCF33C700FC3F6A /* PodcastAPI.swift in Sources */,
 				AACF70992BCDE047007E91BD /* Presentable.swift in Sources */,
 				AACF708C2BCDD82E007E91BD /* SearchViewController.swift in Sources */,
 				AACF70882BCDD656007E91BD /* RootTabBarController.swift in Sources */,
@@ -246,6 +305,7 @@
 				AACF708A2BCDD6C1007E91BD /* FavoritesListViewController.swift in Sources */,
 				AACF70722BCDD26B007E91BD /* PodcastListViewController.swift in Sources */,
 				AACF706E2BCDD26B007E91BD /* AppDelegate.swift in Sources */,
+				AA54A29D2BCF2FE900FC3F6A /* SFSymbol.swift in Sources */,
 				AACF709F2BCDE2BF007E91BD /* Dismissable.swift in Sources */,
 				AACF709B2BCDE04C007E91BD /* Pushable.swift in Sources */,
 				AACF70842BCDD2F2007E91BD /* AppContainer.swift in Sources */,
