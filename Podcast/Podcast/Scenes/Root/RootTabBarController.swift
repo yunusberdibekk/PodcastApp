@@ -42,7 +42,7 @@ final class RootTabBarController: UITabBarController {
 
     private func prepareControllers() -> [UIViewController] {
         [
-            createController(controller: PodcastListViewController(),
+            createController(controller: PodcastListViewController(viewModel: PodcastListViewModel(apiClient: app.client)),
                              title: "Podcasts",
                              image: .house,
                              tag: 0),

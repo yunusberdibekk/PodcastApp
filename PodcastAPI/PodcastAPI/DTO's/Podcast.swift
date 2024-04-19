@@ -8,23 +8,24 @@
 import Foundation
 
 public struct Feed: Codable {
-    let title: String
-    let country: String
-    let results: [Podcast]
+    public let title: String
+    public let country: String
+    public let results: [Podcast]
 }
 
-public struct Podcast: Codable {
-    let artistName, id, name: String
-    let kind: Kind
-    let artworkUrl100: String
-    let genres: [Genre]
-    let url: String
-    let contentAdvisoryRating: String?
+public struct Podcast: Identifiable, Codable {
+    public let id: String
+    public let artistName, name: String
+    public let kind: Kind
+    public let artworkUrl100: String
+    public let genres: [Genre]
+    public let url: String
+    public let contentAdvisoryRating: String?
 }
 
 public struct Genre: Codable {
-    let genreID, name: String
-    let url: String
+    public let genreID, name: String
+    public let url: String
 
     enum CodingKeys: String, CodingKey {
         case genreID = "genreId"

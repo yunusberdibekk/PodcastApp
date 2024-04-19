@@ -8,5 +8,5 @@
 import Foundation
 
 public struct PodcastResponse: Codable {
-    let feed: Feed
+    public let feed: Feed
 }

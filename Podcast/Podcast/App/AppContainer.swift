@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import PodcastAPI
 
 let app: AppContainer = .init()
 
 final class AppContainer {
     let router: AppRouter = .init()
+    let client: APIClientProtocol = APIClient()
 }

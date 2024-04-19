@@ -8,23 +8,39 @@
 import PodcastAPI
 import UIKit
 
-final class PodcastListViewController: UIViewController {
-    var service: APIClientProtocol = APIClient()
+final class PodcastListViewController: LoadableViewController {
+    var viewModel: PodcastListViewModelProtocol
+
+    private var podcastPresentations: [PodcastPresentation] = []
+
+    init(viewModel: PodcastListViewModelProtocol) {
+        self.viewModel = viewModel
+
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        title = "Podcasts"
 
-        let url = URL(string: "https://rss.applemarketingtools.com/api/v2/tr/podcasts/top/50/podcasts.json")!
+        viewModel.delegate = self
+        viewModel.viewDidLoad()
+    }
+}
 
-        service.execute(expecting: PodcastResponse.self, request: .init(url: url)) { result in
-            switch result {
-            case .success(let object):
-                dump(object)
-            case .failure(let error):
-                dump(error)
-            }
+extension PodcastListViewController: PodcastListViewModelDelegate {
+    func handleViewModelOutput(output: PodcastListViewModelOutput) {
+        switch output {
+        case .setTitle(let title):
+            self.title = title
+        case .showPodcastList(let presentations):
+            self.podcastPresentations = presentations
+            dump(presentations)
         }
     }
 }
