@@ -10,6 +10,8 @@
 		AAE874032BCF4137009A2932 /* PodcastAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = AAE874022BCF4137009A2932 /* PodcastAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AAE8744E2BCF43AA009A2932 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE8744D2BCF43AA009A2932 /* APIClient.swift */; };
 		AAE874502BCF43B3009A2932 /* APIClientContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE8744F2BCF43B3009A2932 /* APIClientContracts.swift */; };
+		AAEDD03E2BD2E29A002D53B1 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDD03D2BD2E29A002D53B1 /* Podcast.swift */; };
+		AAEDD0472BD2F05D002D53B1 /* PodcastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDD0462BD2F05D002D53B1 /* PodcastResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +19,8 @@
 		AAE874022BCF4137009A2932 /* PodcastAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PodcastAPI.h; sourceTree = "<group>"; };
 		AAE8744D2BCF43AA009A2932 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		AAE8744F2BCF43B3009A2932 /* APIClientContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientContracts.swift; sourceTree = "<group>"; };
+		AAEDD03D2BD2E29A002D53B1 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
+		AAEDD0462BD2F05D002D53B1 /* PodcastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 		AAE8744B2BCF4398009A2932 /* DTO's */ = {
 			isa = PBXGroup;
 			children = (
+				AAEDD03D2BD2E29A002D53B1 /* Podcast.swift */,
 			);
 			path = "DTO's";
 			sourceTree = "<group>";
@@ -76,6 +81,7 @@
 		AAE8744C2BCF439B009A2932 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				AAEDD0462BD2F05D002D53B1 /* PodcastResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -161,6 +167,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE8744E2BCF43AA009A2932 /* APIClient.swift in Sources */,
+				AAEDD0472BD2F05D002D53B1 /* PodcastResponse.swift in Sources */,
+				AAEDD03E2BD2E29A002D53B1 /* Podcast.swift in Sources */,
 				AAE874502BCF43B3009A2932 /* APIClientContracts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

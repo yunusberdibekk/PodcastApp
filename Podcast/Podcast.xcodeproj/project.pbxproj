@@ -21,7 +21,23 @@
 		AAE874452BCF42CB009A2932 /* Pushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874442BCF42CB009A2932 /* Pushable.swift */; };
 		AAE874472BCF42D2009A2932 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874462BCF42D2009A2932 /* Alertable.swift */; };
 		AAE874492BCF42D9009A2932 /* Dismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874482BCF42D9009A2932 /* Dismissable.swift */; };
+		AAEDD0432BD2E68E002D53B1 /* PodcastAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAEDD0422BD2E68E002D53B1 /* PodcastAPI.framework */; };
+		AAEDD0442BD2E68E002D53B1 /* PodcastAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AAEDD0422BD2E68E002D53B1 /* PodcastAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AAEDD0452BD2E68F002D53B1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AAEDD0442BD2E68E002D53B1 /* PodcastAPI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AAE874122BCF4150009A2932 /* Podcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +56,7 @@
 		AAE874442BCF42CB009A2932 /* Pushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pushable.swift; sourceTree = "<group>"; };
 		AAE874462BCF42D2009A2932 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		AAE874482BCF42D9009A2932 /* Dismissable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dismissable.swift; sourceTree = "<group>"; };
+		AAEDD0422BD2E68E002D53B1 /* PodcastAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PodcastAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAEDD0432BD2E68E002D53B1 /* PodcastAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +76,7 @@
 			children = (
 				AAE874142BCF4150009A2932 /* Podcast */,
 				AAE874132BCF4150009A2932 /* Products */,
+				AAEDD0412BD2E68E002D53B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,10 +163,10 @@
 		AAE874392BCF426A009A2932 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				AAE874322BCF426A009A2932 /* Favorites */,
-				AAE874342BCF426A009A2932 /* PodcastList */,
 				AAE874362BCF426A009A2932 /* Root */,
+				AAE874342BCF426A009A2932 /* PodcastList */,
 				AAE874382BCF426A009A2932 /* Search */,
+				AAE874322BCF426A009A2932 /* Favorites */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -171,6 +190,14 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		AAEDD0412BD2E68E002D53B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AAEDD0422BD2E68E002D53B1 /* PodcastAPI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,6 +208,7 @@
 				AAE8740E2BCF4150009A2932 /* Sources */,
 				AAE8740F2BCF4150009A2932 /* Frameworks */,
 				AAE874102BCF4150009A2932 /* Resources */,
+				AAEDD0452BD2E68F002D53B1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

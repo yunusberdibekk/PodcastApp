@@ -8,6 +8,7 @@
 import Foundation
 
 enum SFSymbol: String {
+    case house
     case list_clipboard
     case heart
     case magnifyingglass
