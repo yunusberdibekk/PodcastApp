@@ -10,8 +10,16 @@ import UIKit
 
 final class PodcastListViewController: LoadableViewController {
     var viewModel: PodcastListViewModelProtocol
-
     private var podcastPresentations: [PodcastPresentation] = []
+
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.rowHeight = 125
+        tableView.register(PodcastListTableViewCell.self,
+                           forCellReuseIdentifier: PodcastListTableViewCell.reuseIdentifier)
+        return tableView
+    }()
 
     init(viewModel: PodcastListViewModelProtocol) {
         self.viewModel = viewModel
@@ -26,10 +34,27 @@ final class PodcastListViewController: LoadableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-
+        prepareController()
         viewModel.delegate = self
         viewModel.viewDidLoad()
+    }
+
+    private func prepareController() {
+        view.backgroundColor = .systemBackground
+        prepareTableView()
+    }
+
+    private func prepareTableView() {
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
     }
 }
 
@@ -39,8 +64,41 @@ extension PodcastListViewController: PodcastListViewModelDelegate {
         case .setTitle(let title):
             self.title = title
         case .showPodcastList(let presentations):
-            self.podcastPresentations = presentations
-            dump(presentations)
+            podcastPresentations = presentations
+            tableView.reloadData()
         }
     }
+}
+
+extension PodcastListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PodcastListTableViewCell.reuseIdentifier,
+                                                       for: indexPath) as? PodcastListTableViewCell
+        else {
+            fatalError()
+        }
+
+        cell.configure(with: podcastPresentations[indexPath.row])
+
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension PodcastListViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        podcastPresentations.count
+    }
+}
+
+#Preview {
+    UINavigationController(rootViewController: PodcastListViewController(
+        viewModel: PodcastListViewModel(apiClient: app.client)))
 }
