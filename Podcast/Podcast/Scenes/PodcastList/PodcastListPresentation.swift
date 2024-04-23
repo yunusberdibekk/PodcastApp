@@ -8,7 +8,7 @@
 import Foundation
 import PodcastAPI
 
-final class PodcastPresentation {
+final class PodcastListPresentation {
     let image: String
     let title: String
     let description: String
@@ -20,8 +20,8 @@ final class PodcastPresentation {
     }
 }
 
-extension PodcastPresentation {
-    convenience init(podcast: Podcast) {
+extension PodcastListPresentation {
+    convenience init(podcast: PodcastListModel) {
         self.init(image: podcast.artworkUrl100, title: podcast.artistName, description: podcast.name)
     }
 }

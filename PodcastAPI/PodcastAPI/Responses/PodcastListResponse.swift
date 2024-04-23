@@ -7,6 +7,6 @@
 
 import Foundation
 
-public struct PodcastResponse: Codable {
+public struct PodcastListResponse: Codable {
     public let feed: Feed
 }

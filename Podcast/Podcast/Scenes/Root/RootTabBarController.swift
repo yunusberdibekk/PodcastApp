@@ -5,28 +5,15 @@
 //  Created by Yunus Emre Berdibek on 16.04.2024.
 //
 
+import PodcastAPI
 import UIKit
 
 final class RootTabBarController: UITabBarController {
-    init() {
+    private let apiClient: APIClientProtocol
+
+    init(apiClient: APIClientProtocol) {
+        self.apiClient = apiClient
         super.init(nibName: nil, bundle: nil)
-
-        let navAppearance = UINavigationBarAppearance()
-        navAppearance.configureWithOpaqueBackground()
-        navAppearance.largeTitleTextAttributes = [
-            .foregroundColor: UIColor.purple
-        ]
-        navAppearance.titleTextAttributes = [
-            .foregroundColor: UIColor.purple
-        ]
-
-        UINavigationBar.appearance().standardAppearance = navAppearance
-        UINavigationBar.appearance().scrollEdgeAppearance = navAppearance
-
-        let tabAppearance = UITabBarAppearance()
-        tabAppearance.configureWithOpaqueBackground()
-        UITabBar.appearance().standardAppearance = tabAppearance
-        UITabBar.appearance().scrollEdgeAppearance = tabAppearance
     }
 
     @available(*, unavailable)
@@ -42,12 +29,12 @@ final class RootTabBarController: UITabBarController {
 
     private func prepareControllers() -> [UIViewController] {
         [
-            createController(controller: PodcastListViewController(viewModel: PodcastListViewModel(apiClient: app.client)),
+            createController(controller: PodcastListViewController(viewModel: PodcastListViewModel(apiClient: apiClient)),
                              title: "Podcasts",
                              image: .house,
                              tag: 0),
 
-            createController(controller: SearchViewController(),
+            createController(controller: SearchListViewController(),
                              title: "Search",
                              image: .magnifyingglass,
                              tag: 1),
@@ -66,7 +53,7 @@ final class RootTabBarController: UITabBarController {
                                                        image: UIImage(systemName: image.systemName),
                                                        tag: tag)
 
-        navigationController.navigationItem.largeTitleDisplayMode = .inline
+        navigationController.navigationItem.largeTitleDisplayMode = .automatic
         navigationController.navigationBar.prefersLargeTitles = true
 
         return navigationController

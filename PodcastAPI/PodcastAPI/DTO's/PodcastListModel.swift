@@ -9,14 +9,12 @@ import Foundation
 
 public struct Feed: Codable {
     public let title: String
-    public let country: String
-    public let results: [Podcast]
+    public let results: [PodcastListModel]
 }
 
-public struct Podcast: Identifiable, Codable {
+public struct PodcastListModel: Identifiable, Codable {
     public let id: String
     public let artistName, name: String
-    public let kind: Kind
     public let artworkUrl100: String
     public let genres: [Genre]
     public let url: String
@@ -31,8 +29,4 @@ public struct Genre: Codable {
         case genreID = "genreId"
         case name, url
     }
-}
-
-public enum Kind: String, Codable {
-    case podcasts
 }

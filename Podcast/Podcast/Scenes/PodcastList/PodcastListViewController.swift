@@ -9,8 +9,9 @@ import PodcastAPI
 import UIKit
 
 final class PodcastListViewController: LoadableViewController {
+    private var podcastPresentations: [PodcastListPresentation] = []
+
     var viewModel: PodcastListViewModelProtocol
-    private var podcastPresentations: [PodcastPresentation] = []
 
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -85,6 +86,7 @@ extension PodcastListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.didSelectRowAt(at: indexPath.row)
     }
 }
 

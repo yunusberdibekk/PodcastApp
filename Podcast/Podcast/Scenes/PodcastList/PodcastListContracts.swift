@@ -8,10 +8,6 @@
 import Foundation
 import PodcastAPI
 
-protocol PodcastListViewModelDelegate: AnyObject, Loadable {
-    func handleViewModelOutput(output: PodcastListViewModelOutput)
-}
-
 protocol PodcastListViewModelProtocol {
     var delegate: PodcastListViewModelDelegate? { get set }
     var apiClient: APIClientProtocol { get }
@@ -21,11 +17,11 @@ protocol PodcastListViewModelProtocol {
     func didSelectRowAt(at index: Int)
 }
 
-enum PodcastListViewModelOutput {
-    case setTitle(String)
-    case showPodcastList([PodcastPresentation])
+protocol PodcastListViewModelDelegate: AnyObject, Loadable, Pushable {
+    func handleViewModelOutput(output: PodcastListViewModelOutput)
 }
 
-enum PodcastListRoute {
-    case detail
+enum PodcastListViewModelOutput {
+    case setTitle(String)
+    case showPodcastList([PodcastListPresentation])
 }
