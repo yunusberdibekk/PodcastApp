@@ -16,17 +16,5 @@ public struct PodcastListModel: Identifiable, Codable {
     public let id: String
     public let artistName, name: String
     public let artworkUrl100: String
-    public let genres: [Genre]
     public let url: String
-    public let contentAdvisoryRating: String?
-}
-
-public struct Genre: Codable {
-    public let genreID, name: String
-    public let url: String
-
-    enum CodingKeys: String, CodingKey {
-        case genreID = "genreId"
-        case name, url
-    }
 }

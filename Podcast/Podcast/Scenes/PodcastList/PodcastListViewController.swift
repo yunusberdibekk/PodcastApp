@@ -9,9 +9,12 @@ import PodcastAPI
 import UIKit
 
 final class PodcastListViewController: LoadableViewController {
+    // MARK: - Variables
+
+    var viewModel: PodcastListViewModelProtocol?
     private var podcastPresentations: [PodcastListPresentation] = []
 
-    var viewModel: PodcastListViewModelProtocol
+    // MARK: - UI Components
 
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -22,23 +25,20 @@ final class PodcastListViewController: LoadableViewController {
         return tableView
     }()
 
-    init(viewModel: PodcastListViewModelProtocol) {
-        self.viewModel = viewModel
-
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareController()
-        viewModel.delegate = self
-        viewModel.viewDidLoad()
+        viewModel?.delegate = self
+        viewModel?.viewDidLoad()
     }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        viewModel?.viewDidDisappear()
+    }
+
+    // MARK: - Functions
 
     private func prepareController() {
         view.backgroundColor = .systemBackground
@@ -59,11 +59,13 @@ final class PodcastListViewController: LoadableViewController {
     }
 }
 
+// MARK: Extensions
+
 extension PodcastListViewController: PodcastListViewModelDelegate {
     func handleViewModelOutput(output: PodcastListViewModelOutput) {
         switch output {
         case .setTitle(let title):
-            self.title = title
+            navigationItem.title = title
         case .showPodcastList(let presentations):
             podcastPresentations = presentations
             tableView.reloadData()
@@ -86,7 +88,7 @@ extension PodcastListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        viewModel.didSelectRowAt(at: indexPath.row)
+        viewModel?.didSelectRowAt(at: indexPath.row)
     }
 }
 
@@ -98,9 +100,4 @@ extension PodcastListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         podcastPresentations.count
     }
-}
-
-#Preview {
-    UINavigationController(rootViewController: PodcastListViewController(
-        viewModel: PodcastListViewModel(apiClient: app.client)))
 }

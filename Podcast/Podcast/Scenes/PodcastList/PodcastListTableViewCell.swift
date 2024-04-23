@@ -9,6 +9,8 @@ import SDWebImage
 import UIKit
 
 final class PodcastListTableViewCell: UITableViewCell {
+    // MARK: - Variables
+
     static let reuseIdentifier: String = "PodcastListTableViewCell"
 
     // MARK: - UI Components
@@ -32,6 +34,8 @@ final class PodcastListTableViewCell: UITableViewCell {
         return imageView
     }()
 
+    // MARK: - Lifecycle
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         prepareCell()
@@ -41,6 +45,8 @@ final class PodcastListTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError()
     }
+
+    // MARK: - Functions
 
     private func prepareCell() {
         accessoryType = .disclosureIndicator
@@ -76,6 +82,8 @@ final class PodcastListTableViewCell: UITableViewCell {
         ])
     }
 }
+
+// MARK: - Extensions
 
 extension PodcastListTableViewCell {
     public func configure(with presentation: PodcastListPresentation) {

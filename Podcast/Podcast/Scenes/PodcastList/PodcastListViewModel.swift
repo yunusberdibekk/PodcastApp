@@ -12,6 +12,7 @@ final class PodcastListViewModel: PodcastListViewModelProtocol {
     weak var delegate: PodcastListViewModelDelegate?
     var apiClient: APIClientProtocol
 
+    private var title: String? = nil
     private var podcastListModels: [PodcastListModel] = []
 
     init(apiClient: APIClientProtocol) {
@@ -27,16 +28,10 @@ final class PodcastListViewModel: PodcastListViewModelProtocol {
 
 extension PodcastListViewModel {
     func viewDidLoad() {
-        notify(.setTitle("Top Shows"))
         delegate?.loadable(true)
 
-        let url = URL(string: "https://rss.applemarketingtools.com/api/v2/tr/podcasts/top/50/podcasts.json")!
-
-        apiClient.execute(expecting: PodcastListResponse.self, request: .init(url: url)) { [weak self] result in
-            guard let self else {
-                return
-            }
-
+        apiClient.execute(expecting: PodcastListResponse.self, request: .init(url: URLString.podcastList.url)) { [weak self] result in
+            guard let self else { return }
             delegate?.loadable(false)
 
             switch result {
@@ -44,6 +39,8 @@ extension PodcastListViewModel {
                 let presentations = object.feed.results.compactMap { PodcastListPresentation(podcast: $0) }
 
                 self.podcastListModels = object.feed.results
+                self.title = object.feed.title
+                self.notify(.setTitle(object.feed.title))
                 self.notify(.showPodcastList(presentations))
             case .failure(let error):
                 dump(error)
@@ -51,16 +48,17 @@ extension PodcastListViewModel {
         }
     }
 
-    func viewWillAppear() {}
+    func viewDidDisappear() {
+        notify(.setTitle(title))
+    }
 
     func didSelectRowAt(at index: Int) {
         let podcast = podcastListModels[index]
-        let viewModel = PodcastDetailViewModel(podcastDetailPresentation: .init(title: podcast.artistName,
-                                                                                description: podcast.name,
-                                                                                urlString: podcast.url,
-                                                                                detailType: .podcastList(podcast.id)))
-        let controller = PodcastDetailBuilder.make(viewModel: viewModel)
-
+        let viewModel = PodcastListDetailViewModel(podcastDetailPresentation: .init(id: podcast.id,
+                                                                                    title: podcast.artistName,
+                                                                                    description: podcast.name,
+                                                                                    urlString: podcast.url))
+        let controller = PodcastListDetailBuilder.make(viewModel: viewModel)
         delegate?.push(controller: controller)
     }
 }

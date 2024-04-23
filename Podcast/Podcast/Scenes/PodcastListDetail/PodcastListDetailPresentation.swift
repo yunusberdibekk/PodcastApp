@@ -7,14 +7,9 @@
 
 import Foundation
 
-enum PodcastDetailPresentationType {
-    case podcastList(String) // id
-    case podcastSearch(String) // trackID
-}
-
-struct PodcastDetailPresentation {
+struct PodcastListDetailPresentation {
+    let id: String
     let title: String
     let description: String
     let urlString: String
-    let detailType: PodcastDetailPresentationType
 }

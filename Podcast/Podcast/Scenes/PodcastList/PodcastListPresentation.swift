@@ -22,6 +22,8 @@ final class PodcastListPresentation {
 
 extension PodcastListPresentation {
     convenience init(podcast: PodcastListModel) {
-        self.init(image: podcast.artworkUrl100, title: podcast.artistName, description: podcast.name)
+        self.init(image: podcast.artworkUrl100,
+                  title: podcast.artistName,
+                  description: podcast.name)
     }
 }

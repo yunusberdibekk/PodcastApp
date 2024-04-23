@@ -28,18 +28,25 @@ final class RootTabBarController: UITabBarController {
     }
 
     private func prepareControllers() -> [UIViewController] {
-        [
-            createController(controller: PodcastListViewController(viewModel: PodcastListViewModel(apiClient: apiClient)),
+        let podcastListViewModel = PodcastListViewModel(apiClient: apiClient)
+        let podcastListViewController = PodcastListViewController()
+        podcastListViewController.viewModel = podcastListViewModel
+
+        let searchListViewController = SearchListViewController()
+        let favoritesListViewController = FavoritesListViewController()
+
+        return [
+            createController(controller: podcastListViewController,
                              title: "Podcasts",
                              image: .house,
                              tag: 0),
 
-            createController(controller: SearchListViewController(),
+            createController(controller: searchListViewController,
                              title: "Search",
                              image: .magnifyingglass,
                              tag: 1),
 
-            createController(controller: FavoritesListViewController(),
+            createController(controller: favoritesListViewController,
                              title: "Favorites",
                              image: .heart,
                              tag: 2)

@@ -13,7 +13,7 @@ protocol PodcastListViewModelProtocol {
     var apiClient: APIClientProtocol { get }
 
     func viewDidLoad()
-    func viewWillAppear()
+    func viewDidDisappear()
     func didSelectRowAt(at index: Int)
 }
 
@@ -22,6 +22,6 @@ protocol PodcastListViewModelDelegate: AnyObject, Loadable, Pushable {
 }
 
 enum PodcastListViewModelOutput {
-    case setTitle(String)
+    case setTitle(String?)
     case showPodcastList([PodcastListPresentation])
 }

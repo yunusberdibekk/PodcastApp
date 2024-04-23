@@ -14,6 +14,7 @@
 		AAE874502BCF43B3009A2932 /* APIClientContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE8744F2BCF43B3009A2932 /* APIClientContracts.swift */; };
 		AAEDD03E2BD2E29A002D53B1 /* PodcastListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDD03D2BD2E29A002D53B1 /* PodcastListModel.swift */; };
 		AAEDD0472BD2F05D002D53B1 /* PodcastListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEDD0462BD2F05D002D53B1 /* PodcastListResponse.swift */; };
+		AAF1F0082BD7C9130061870D /* URLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF1F0072BD7C9130061870D /* URLString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		AAE8744F2BCF43B3009A2932 /* APIClientContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientContracts.swift; sourceTree = "<group>"; };
 		AAEDD03D2BD2E29A002D53B1 /* PodcastListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListModel.swift; sourceTree = "<group>"; };
 		AAEDD0462BD2F05D002D53B1 /* PodcastListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListResponse.swift; sourceTree = "<group>"; };
+		AAF1F0072BD7C9130061870D /* URLString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +59,10 @@
 		AAE874012BCF4137009A2932 /* PodcastAPI */ = {
 			isa = PBXGroup;
 			children = (
-				AAE8744C2BCF439B009A2932 /* Responses */,
-				AAE8744B2BCF4398009A2932 /* DTO's */,
+				AAF1F0062BD7C9030061870D /* Utils */,
 				AAE8744A2BCF4392009A2932 /* APIClient */,
+				AAE8744B2BCF4398009A2932 /* DTO's */,
+				AAE8744C2BCF439B009A2932 /* Responses */,
 				AAE874022BCF4137009A2932 /* PodcastAPI.h */,
 			);
 			path = PodcastAPI;
@@ -90,6 +93,22 @@
 				AABCCA582BD6FCD20058C276 /* PodcastSearchResponse.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		AAF1F0062BD7C9030061870D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AAF1F0092BD7C9170061870D /* Constant */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AAF1F0092BD7C9170061870D /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				AAF1F0072BD7C9130061870D /* URLString.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE8744E2BCF43AA009A2932 /* APIClient.swift in Sources */,
+				AAF1F0082BD7C9130061870D /* URLString.swift in Sources */,
 				AAEDD0472BD2F05D002D53B1 /* PodcastListResponse.swift in Sources */,
 				AABCCA5B2BD6FCD90058C276 /* PodcastSearchModel.swift in Sources */,
 				AAEDD03E2BD2E29A002D53B1 /* PodcastListModel.swift in Sources */,
