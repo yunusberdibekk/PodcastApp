@@ -33,7 +33,7 @@ final class RootTabBarController: UITabBarController {
         podcastListViewController.viewModel = podcastListViewModel
 
         let searchListViewController = SearchListViewController()
-        let favoritesListViewController = FavoritesListViewController()
+        let favoritesListViewController = FavoriteListViewController()
 
         return [
             createController(controller: podcastListViewController,

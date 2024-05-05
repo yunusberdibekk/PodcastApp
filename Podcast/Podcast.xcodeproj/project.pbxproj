@@ -12,12 +12,20 @@
 		AAB3B1902BD462B10084EDAB /* PodcastListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB3B18F2BD462B10084EDAB /* PodcastListTableViewCell.swift */; };
 		AABCCA5E2BD704500058C276 /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCCA5D2BD704500058C276 /* BodyLabel.swift */; };
 		AABCCA602BD704590058C276 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCCA5F2BD704590058C276 /* TitleLabel.swift */; };
+		AAE106DA2BE11B9A00650CED /* FavoriteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE106D92BE11B9A00650CED /* FavoriteListViewModel.swift */; };
+		AAE106DC2BE11C6100650CED /* FavoriteListContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE106DB2BE11C6100650CED /* FavoriteListContracts.swift */; };
+		AAE106DE2BE11C6F00650CED /* FavoriteListPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE106DD2BE11C6F00650CED /* FavoriteListPresentation.swift */; };
+		AAE106E02BE11C7A00650CED /* FavoriteListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE106DF2BE11C7A00650CED /* FavoriteListBuilder.swift */; };
+		AAE106E22BE11E2E00650CED /* SearchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE106E12BE11E2E00650CED /* SearchListViewModel.swift */; };
+		AAE106E42BE11E3700650CED /* SearchListContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE106E32BE11E3700650CED /* SearchListContracts.swift */; };
+		AAE106E62BE11E4000650CED /* SearchListPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE106E52BE11E4000650CED /* SearchListPresentation.swift */; };
+		AAE106E82BE11E4B00650CED /* SearchListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE106E72BE11E4B00650CED /* SearchListBuilder.swift */; };
 		AAE874162BCF4150009A2932 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874152BCF4150009A2932 /* AppDelegate.swift */; };
 		AAE8741F2BCF4151009A2932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE8741E2BCF4151009A2932 /* Assets.xcassets */; };
 		AAE874222BCF4151009A2932 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AAE874212BCF4151009A2932 /* Base */; };
 		AAE8742E2BCF41F0009A2932 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE8742D2BCF41F0009A2932 /* AppContainer.swift */; };
 		AAE874302BCF41F5009A2932 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE8742F2BCF41F5009A2932 /* AppRouter.swift */; };
-		AAE8743A2BCF426A009A2932 /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874312BCF426A009A2932 /* FavoritesListViewController.swift */; };
+		AAE8743A2BCF426A009A2932 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874312BCF426A009A2932 /* FavoriteListViewController.swift */; };
 		AAE8743B2BCF426A009A2932 /* PodcastListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874332BCF426A009A2932 /* PodcastListViewController.swift */; };
 		AAE8743C2BCF426A009A2932 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874352BCF426A009A2932 /* RootTabBarController.swift */; };
 		AAE8743D2BCF426A009A2932 /* SearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE874372BCF426A009A2932 /* SearchListViewController.swift */; };
@@ -59,6 +67,14 @@
 		AAB3B18F2BD462B10084EDAB /* PodcastListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListTableViewCell.swift; sourceTree = "<group>"; };
 		AABCCA5D2BD704500058C276 /* BodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyLabel.swift; sourceTree = "<group>"; };
 		AABCCA5F2BD704590058C276 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		AAE106D92BE11B9A00650CED /* FavoriteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewModel.swift; sourceTree = "<group>"; };
+		AAE106DB2BE11C6100650CED /* FavoriteListContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListContracts.swift; sourceTree = "<group>"; };
+		AAE106DD2BE11C6F00650CED /* FavoriteListPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListPresentation.swift; sourceTree = "<group>"; };
+		AAE106DF2BE11C7A00650CED /* FavoriteListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListBuilder.swift; sourceTree = "<group>"; };
+		AAE106E12BE11E2E00650CED /* SearchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewModel.swift; sourceTree = "<group>"; };
+		AAE106E32BE11E3700650CED /* SearchListContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListContracts.swift; sourceTree = "<group>"; };
+		AAE106E52BE11E4000650CED /* SearchListPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListPresentation.swift; sourceTree = "<group>"; };
+		AAE106E72BE11E4B00650CED /* SearchListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListBuilder.swift; sourceTree = "<group>"; };
 		AAE874122BCF4150009A2932 /* Podcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Podcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE874152BCF4150009A2932 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAE8741E2BCF4151009A2932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,7 +82,7 @@
 		AAE874232BCF4151009A2932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAE8742D2BCF41F0009A2932 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		AAE8742F2BCF41F5009A2932 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
-		AAE874312BCF426A009A2932 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
+		AAE874312BCF426A009A2932 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
 		AAE874332BCF426A009A2932 /* PodcastListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastListViewController.swift; sourceTree = "<group>"; };
 		AAE874352BCF426A009A2932 /* RootTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		AAE874372BCF426A009A2932 /* SearchListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListViewController.swift; sourceTree = "<group>"; };
@@ -170,12 +186,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		AAE874322BCF426A009A2932 /* Favorites */ = {
+		AAE874322BCF426A009A2932 /* FavoriteList */ = {
 			isa = PBXGroup;
 			children = (
-				AAE874312BCF426A009A2932 /* FavoritesListViewController.swift */,
+				AAE874312BCF426A009A2932 /* FavoriteListViewController.swift */,
+				AAE106D92BE11B9A00650CED /* FavoriteListViewModel.swift */,
+				AAE106DB2BE11C6100650CED /* FavoriteListContracts.swift */,
+				AAE106DD2BE11C6F00650CED /* FavoriteListPresentation.swift */,
+				AAE106DF2BE11C7A00650CED /* FavoriteListBuilder.swift */,
 			);
-			path = Favorites;
+			path = FavoriteList;
 			sourceTree = "<group>";
 		};
 		AAE874342BCF426A009A2932 /* PodcastList */ = {
@@ -203,6 +223,10 @@
 			isa = PBXGroup;
 			children = (
 				AAE874372BCF426A009A2932 /* SearchListViewController.swift */,
+				AAE106E12BE11E2E00650CED /* SearchListViewModel.swift */,
+				AAE106E32BE11E3700650CED /* SearchListContracts.swift */,
+				AAE106E52BE11E4000650CED /* SearchListPresentation.swift */,
+				AAE106E72BE11E4B00650CED /* SearchListBuilder.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -214,7 +238,7 @@
 				AAE874342BCF426A009A2932 /* PodcastList */,
 				AAF1EFF02BD71A070061870D /* PodcastListDetail */,
 				AAE874382BCF426A009A2932 /* Search */,
-				AAE874322BCF426A009A2932 /* Favorites */,
+				AAE874322BCF426A009A2932 /* FavoriteList */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -354,32 +378,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE106E22BE11E2E00650CED /* SearchListViewModel.swift in Sources */,
 				AAE874492BCF42D9009A2932 /* Dismissable.swift in Sources */,
 				AAF1EFF42BD71AE40061870D /* PodcastListDetailViewModel.swift in Sources */,
 				AAE874412BCF42AC009A2932 /* SFSymbol.swift in Sources */,
+				AAE106E02BE11C7A00650CED /* FavoriteListBuilder.swift in Sources */,
 				AAB3B1902BD462B10084EDAB /* PodcastListTableViewCell.swift in Sources */,
 				AAE874452BCF42CB009A2932 /* Pushable.swift in Sources */,
 				AAEDD04D2BD31009002D53B1 /* PodcastListPresentation.swift in Sources */,
 				AAE874302BCF41F5009A2932 /* AppRouter.swift in Sources */,
 				AAEDD0492BD30C0B002D53B1 /* PodcastListViewModel.swift in Sources */,
+				AAE106E62BE11E4000650CED /* SearchListPresentation.swift in Sources */,
 				AAE8743D2BCF426A009A2932 /* SearchListViewController.swift in Sources */,
 				AAF1EFF62BD71AF60061870D /* PodcastListDetailContracts.swift in Sources */,
+				AAE106E82BE11E4B00650CED /* SearchListBuilder.swift in Sources */,
 				AAE8743C2BCF426A009A2932 /* RootTabBarController.swift in Sources */,
 				AAF1EFFA2BD71B0A0061870D /* PodcastListDetailBuilder.swift in Sources */,
 				AAE8743B2BCF426A009A2932 /* PodcastListViewController.swift in Sources */,
 				AAEDD0542BD320B3002D53B1 /* Loadable.swift in Sources */,
+				AAE106DE2BE11C6F00650CED /* FavoriteListPresentation.swift in Sources */,
 				AAEDD04B2BD30C20002D53B1 /* PodcastListContracts.swift in Sources */,
 				AAE874162BCF4150009A2932 /* AppDelegate.swift in Sources */,
 				AAF1EFF22BD71A800061870D /* PodcastListDetailViewController.swift in Sources */,
 				AABCCA602BD704590058C276 /* TitleLabel.swift in Sources */,
 				AAF1EFF82BD71B010061870D /* PodcastListDetailPresentation.swift in Sources */,
+				AAE106DA2BE11B9A00650CED /* FavoriteListViewModel.swift in Sources */,
+				AAE106E42BE11E3700650CED /* SearchListContracts.swift in Sources */,
 				AAF1EFFC2BD725900061870D /* RootTabBarBuilder.swift in Sources */,
 				AAEDD0522BD31D9D002D53B1 /* LoadableViewController.swift in Sources */,
-				AAE8743A2BCF426A009A2932 /* FavoritesListViewController.swift in Sources */,
+				AAE8743A2BCF426A009A2932 /* FavoriteListViewController.swift in Sources */,
 				AABCCA5E2BD704500058C276 /* BodyLabel.swift in Sources */,
 				AAE874472BCF42D2009A2932 /* Alertable.swift in Sources */,
 				AAE8742E2BCF41F0009A2932 /* AppContainer.swift in Sources */,
 				AAE874432BCF42C3009A2932 /* Presentable.swift in Sources */,
+				AAE106DC2BE11C6100650CED /* FavoriteListContracts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
