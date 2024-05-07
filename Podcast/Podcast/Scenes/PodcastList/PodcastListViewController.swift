@@ -38,7 +38,7 @@ final class PodcastListViewController: LoadableViewController {
         viewModel?.viewDidDisappear()
     }
 
-    // MARK: - Functions
+    // MARK: - Private Functions
 
     private func prepareController() {
         view.backgroundColor = .systemBackground
@@ -59,7 +59,7 @@ final class PodcastListViewController: LoadableViewController {
     }
 }
 
-// MARK: Extensions
+// MARK: PodcastListViewController + PodcastListViewModelDelegate
 
 extension PodcastListViewController: PodcastListViewModelDelegate {
     func handleViewModelOutput(output: PodcastListViewModelOutput) {
@@ -73,16 +73,20 @@ extension PodcastListViewController: PodcastListViewModelDelegate {
     }
 }
 
+// MARK: - PodcastListViewController + UITableViewDelegate
+
 extension PodcastListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PodcastListTableViewCell.reuseIdentifier,
-                                                       for: indexPath) as? PodcastListTableViewCell
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: PodcastListTableViewCell.reuseIdentifier,
+            for: indexPath) as? PodcastListTableViewCell
         else {
             fatalError()
         }
 
         cell.configure(with: podcastPresentations[indexPath.row])
-
         return cell
     }
 
@@ -91,6 +95,8 @@ extension PodcastListViewController: UITableViewDelegate {
         viewModel?.didSelectRowAt(at: indexPath.row)
     }
 }
+
+// MARK: - PodcastListViewController + UITableViewDataSource
 
 extension PodcastListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {

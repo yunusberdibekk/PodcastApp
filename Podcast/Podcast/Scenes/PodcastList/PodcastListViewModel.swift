@@ -8,25 +8,34 @@
 import Foundation
 import PodcastAPI
 
-final class PodcastListViewModel: PodcastListViewModelProtocol {
+final class PodcastListViewModel {
+    // MARK: - Variables
+
     weak var delegate: PodcastListViewModelDelegate?
     var apiClient: APIClientProtocol
 
-    private var title: String? = nil
+    private var title: String?
     private var podcastListModels: [PodcastListModel] = []
+
+    // MARK: - Lifecycle
 
     init(apiClient: APIClientProtocol) {
         self.apiClient = apiClient
     }
 
+    // MARK: - Private Functions
+
     private func notify(_ output: PodcastListViewModelOutput) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
             self.delegate?.handleViewModelOutput(output: output)
         }
     }
 }
 
-extension PodcastListViewModel {
+// MARK: - PodcastListViewModel + PodcastListViewModelProtocol
+
+extension PodcastListViewModel: PodcastListViewModelProtocol {
     func viewDidLoad() {
         delegate?.loadable(true)
 
@@ -54,11 +63,13 @@ extension PodcastListViewModel {
 
     func didSelectRowAt(at index: Int) {
         let podcast = podcastListModels[index]
-        let viewModel = PodcastListDetailViewModel(podcastDetailPresentation: .init(id: podcast.id,
-                                                                                    title: podcast.artistName,
-                                                                                    description: podcast.name,
-                                                                                    urlString: podcast.url))
+        let viewModel = PodcastListDetailViewModel(podcastDetailPresentation: .init(
+            id: podcast.id,
+            title: podcast.artistName,
+            description: podcast.name,
+            urlString: podcast.url))
         let controller = PodcastListDetailBuilder.make(viewModel: viewModel)
+
         delegate?.push(controller: controller)
     }
 }

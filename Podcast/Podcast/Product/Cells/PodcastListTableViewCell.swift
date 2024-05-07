@@ -46,7 +46,7 @@ final class PodcastListTableViewCell: UITableViewCell {
         fatalError()
     }
 
-    // MARK: - Functions
+    // MARK: - Private Functions
 
     private func prepareCell() {
         accessoryType = .disclosureIndicator
@@ -83,7 +83,7 @@ final class PodcastListTableViewCell: UITableViewCell {
     }
 }
 
-// MARK: - Extensions
+// MARK: - Public Functions
 
 extension PodcastListTableViewCell {
     public func configure(with presentation: PodcastListPresentation) {
